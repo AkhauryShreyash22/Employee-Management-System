@@ -1,0 +1,98 @@
+import java.util.Scanner;
+
+class Member
+{
+    String name, address;
+    int Age, Salary;
+    String phone;
+    void PrintSalaryEmployee(String x, int a)
+    {
+          System.out.println("Salary of " + x +" is "+ a);
+          
+    }
+   
+}
+
+class Employee extends Member{
+    String Specialization;
+   
+    void print()
+    {
+        System.out.println("Specialization :"+Specialization);
+        
+    }
+}
+
+class Manager extends Member
+{
+    String department;
+    void print()
+{
+    System.out.println("Department :"+department);
+}
+}
+
+public class Employee_Management_System {
+    public static void main(String[] args) {
+        Employee e=new Employee();
+        System.out.println("How Many Employee your company have");
+        
+        Scanner S=new Scanner(System.in);
+        int a=S.nextInt();
+        for(int i=1;i<=a;i++)
+        {
+           
+            Scanner Sc=new Scanner(System.in);
+        System.out.println("Enter Employee"+ i +" Name");
+        String nam=Sc.nextLine();
+        System.out.println("Enter Employee Phone");
+        String phon=Sc.nextLine();
+      System.out.println("Enter Employee Address");
+        
+        String Address=Sc.nextLine();
+        System.out.println("Enter Employee Age");
+        int age=Sc.nextInt();
+        
+        System.out.println("Enter Employee Sal");
+        int Sal=Sc.nextInt();
+
+        e.name=nam;
+        e.address=Address;
+        e.Age=age;
+        e.phone=phon;
+        e.Salary=Sal;
+        System.out.println("Employee name :" +e.name);
+        System.out.println("Employee address :" +e.address);
+        System.out.println("Employee age :" +e.Age);
+        System.out.println("Employee phone :" +e.phone);
+        e.PrintSalaryEmployee(e.name, e.Salary);
+           
+        }
+        Manager m=new Manager();
+        System.out.println("Enter Manager Name Of These Employees ");
+        Scanner Sc1=new Scanner(System.in);
+        String nam1=Sc1.nextLine();
+        System.out.println("Enter Manager Phone");
+        String phon1=Sc1.nextLine();
+        System.out.println("Enter Manager Address");
+        String Address1=Sc1.nextLine();
+        System.out.println("Enter Manager Age");
+        int age1=Sc1.nextInt();
+       
+        System.out.println("Enter Manger Sal");
+        int Sal1=Sc1.nextInt();
+        m.name=nam1;
+        m.address=Address1;
+        m.Age=age1;
+        m.phone=phon1;
+        m.Salary=Sal1;
+        System.out.println("Manager name :" +m.name);
+        System.out.println("Manager address :" +m.address);
+        System.out.println("Manager age :" +m.Age);
+        System.out.println("Manager phone :" +m.phone);
+        m.PrintSalaryEmployee(m.name, m.Salary);
+        S.close();
+       // Sc.close();
+        Sc1.close();
+    }
+}
